@@ -9,6 +9,7 @@ import { Button, Icon, Input, Layout } from '@ui-kitten/components'
 import { View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/reducers/userReducer';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
 
@@ -23,6 +24,22 @@ const Login: React.FC<LoginProps> = ({navigation}) => {
   const [user, setUser] = useState()
   const [intializing, setInitializing] = useState(true)
 
+  GoogleSignin.configure({
+    webClientId:'1085548693715-4oe3rkppk8b7p0oa2vttp01tk1joigmr.apps.googleusercontent.com'
+  });
+async function onGoogleButtonPress() {
+  // Check if your device supports Google Play
+  await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+  // Get the users ID token
+  const { idToken } = await GoogleSignin.signIn();
+
+  // Create a Google credential with the token
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+  // Sign-in the user with the credential
+  return auth().signInWithCredential(googleCredential);
+}
+
   const onAuthStateChanged = (user: any) => {
     console.log(user)
     setUser(user)
@@ -32,7 +49,9 @@ const Login: React.FC<LoginProps> = ({navigation}) => {
       name: user?.displayName
     }
     console.log('userInfo234', userInfo)
-    dispatch(login(userInfo))
+    if (user) {
+      dispatch(login(userInfo))
+    }
     if (intializing) setInitializing(false)
   }
 
@@ -86,7 +105,9 @@ const userInfo = {
 
     <View style={s.gBtnContainer}>
     <Button onPress={onSignUpPress}>Sign Up</Button>
-    <Button>Google</Button>
+    <Button
+    onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))}
+    >Google</Button>
     </View>  
 
   </Layout>

@@ -13,7 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		6AB8F3C636F0EA9F85613AA2 /* Pods_firebasePrac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139B0F5822A4790BAA567543 /* Pods_firebasePrac.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D3AEC0462BB75B2200C1A9DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3AEC0452BB75B2100C1A9DE /* GoogleService-Info.plist */; };
+		D34101402BBACC150012CA25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D341013F2BBACC150012CA25 /* GoogleService-Info.plist */; };
 		E78FB87BDB6C0CB785600C3F /* Pods_firebasePrac_firebasePracTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01CBB1BC574414A6EA52C1C /* Pods_firebasePrac_firebasePracTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = firebasePrac/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-firebasePrac-firebasePracTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePrac-firebasePracTests.release.xcconfig"; path = "Target Support Files/Pods-firebasePrac-firebasePracTests/Pods-firebasePrac-firebasePracTests.release.xcconfig"; sourceTree = "<group>"; };
 		B01CBB1BC574414A6EA52C1C /* Pods_firebasePrac_firebasePracTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebasePrac_firebasePracTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3AEC0452BB75B2100C1A9DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D341013F2BBACC150012CA25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -118,7 +118,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				D3AEC0452BB75B2100C1A9DE /* GoogleService-Info.plist */,
+				D341013F2BBACC150012CA25 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* firebasePrac */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* firebasePracTests */,
@@ -247,7 +247,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				D3AEC0462BB75B2200C1A9DE /* GoogleService-Info.plist in Resources */,
+				D34101402BBACC150012CA25 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,10 +613,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -695,10 +692,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
